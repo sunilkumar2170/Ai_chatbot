@@ -1,0 +1,53 @@
+# 🌐 My AI Travel Bot ✈️🤖
+
+[![Node.js](https://img.shields.io/badge/Node.js-18.x-green?logo=node.js)](https://nodejs.org/)
+[![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-green?logo=mongodb)](https://www.mongodb.com/)
+[![Bootstrap](https://img.shields.io/badge/Bootstrap-5-blueviolet?logo=bootstrap)](https://getbootstrap.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
+> ✨ A smart, minimal AI-powered travel assistant chatbot with **WhatsApp integration**, built for hassle-free travel queries and user engagement.
+
+---
+
+## 📌 **Table of Contents**
+- [✨ Features](#-features)
+- [⚙️ Tech Stack](#️-tech-stack)
+- [🚀 Setup & Run](#-setup--run)
+- 
+- [☎️ Contact & Support](#️-contact--support)
+- [🙌 Contributing](#-contributing)
+- [📜 License](#-license)
+
+---
+
+## ✨ **Features**
+
+✅ Simple & clean chat UI with **WhatsApp-like bubbles**  
+✅ Live AI responses for travel queries  
+✅ User **Login / Signup** system  
+✅ Query **History** for each user  
+✅ **Admin Dashboard** to manage users & all queries  
+✅ **Twilio** integration — call & WhatsApp support  
+✅ Mobile-friendly, responsive design
+
+---
+
+## ⚙️ **Tech Stack**
+
+| Tech | Details |
+|------|---------|
+| **Backend** | Node.js, Express.js |
+| **Frontend** | EJS, HTML5, CSS3, Bootstrap 5 |
+| **Database** | MongoDB + Mongoose |
+| **Messaging** | Twilio WhatsApp API |
+| **AI API** | OpenAI / GPT integration (or your logic) |
+
+---
+
+## 🚀 **Setup & Run Locally**
+
+### 1️⃣ Clone Repo
+
+```bash
+git clone https://github.com/ysunilkumar2170/ai-travel-bot.git
+cd ai-travel-bot
