@@ -16,7 +16,7 @@ app.use(session({
   saveUninitialized: true
 }));
 
-// ✅ Pehle __filename aur __dirname banao!
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -33,14 +33,14 @@ const port = 3000;
 
 app.use("/", routes);
 
-// Serve static index.html
+
 app.get("/", (req, res) => {
   res.render('index', { user:req.session.user })
 });
 app.get("/chat", (req, res) => {
   res.render('index', { user:req.session.user })
 });
-// POST endpoint for chat
+
 app.post("/chat", async (req, res) => {
   const userMessage = req.body.message;
 
@@ -153,7 +153,6 @@ app.post("/whatsapp-webhook", async (req, res) => {
   res.end(twiml.toString());
 });
 
-// Start server
 app.listen(port, () => {
   console.log(`✅ Server running on http://localhost:${port}`);
 });

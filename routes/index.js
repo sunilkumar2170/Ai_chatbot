@@ -34,13 +34,14 @@ router.get('/signup', (req, res) => {
 });
 
 router.get("/", async (req, res) => {
-  const sessionUser = req.session.user;
+  const sessionUser = req.session.user;  // 🔹 Line 1
 
+  if (!sessionUser) {                    // 🔹 Line 2
+    return res.redirect("/signup");      // 🔹 Line 3
+  }
 
-
-  const history = await Query.find({ userId: sessionUser.id });
-
-  res.render("index", { user: sessionUser, history });
+  const history = await Query.find({ userId: sessionUser.id }); // 🔹 Line 4
+  res.render("index", { user: sessionUser, history });          // 🔹 Line 5
 });
 
 
@@ -53,7 +54,7 @@ router.post("/login", async (req, res) => {
   const match = await bcrypt.compare(password, user.password);
   if (!match) return res.send("Wrong password");
 
-  req.session.user = { name: user.name, email: user.email };
+  req.session.user = { name: user.name, email: user.email, id: user._id    };
   res.redirect("/chat");
 });
 
@@ -87,7 +88,7 @@ router.get('/admin', async (req, res) => {
   const activeUsers = await User.countDocuments({ isBlocked: false });
 
   const queries = await Query.find();
-  const weeklyQueries = [5, 10, 2, 3, 7, 4, 8]; // Dummy data
+  const weeklyQueries = [5, 10, 2, 3, 7, 4, 8]; 
 
   res.render('dashbored', {
     employees: allUsers,
@@ -167,7 +168,7 @@ router.post("/admin/answer/:id", async (req, res) => {
 });
 
 
-// User Query History page
+
 router.get("/history", async (req, res) => {
   const sessionUser = req.session.user;
   if (!sessionUser) return res.send("❌ Not logged in");
